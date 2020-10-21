@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import squirrel
+from .models import Squirrel
 from .forms import apprequestform
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
@@ -8,7 +8,7 @@ from django.db.models import Sum
 def sightings(request):
     squirrels = Squirrels.objects.all()
     context = {'squirrels': squirrels}
-	return render(request, 'sightings/squirrels.html', context)
+    return render(request, 'sightings/squirrels.html', context)
 
 
 def unique_squirrel_id(request,squiid):
@@ -43,7 +43,7 @@ def stats(request):
     shift_am=0
     shift_pm=0
     for i in squirrel.objects.filter('Shift'):
-        if i =='PM'
+        if i =='PM':
             shift_pm+=1
         else:
             shift_am+=1

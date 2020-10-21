@@ -115,3 +115,8 @@ class Squirrel(models.Model):
             null = True,
             blank = True
             )
+
+
+class apprequest(models.Model):
+    squi=models.ForeignKey('sightings.squirrel',on_delete=models.CASCADE)
+
